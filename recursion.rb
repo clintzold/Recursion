@@ -1,4 +1,4 @@
-#iterative fibonacci
+#Fibonacci
 require 'pry-byebug' 
 
 def iterate_fib(n)
@@ -15,7 +15,9 @@ def recursive_fib(n)
   else
     n = recursive_fib(n - 1) + recursive_fib(n - 2)
   end
-  
 end
+
+
+
 binding.pry
 put 'hey'
