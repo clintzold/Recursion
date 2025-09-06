@@ -1,23 +1,26 @@
-#Fibonacci
-require 'pry-byebug' 
 
-def iterate_fib(n)
-  fib = [0, 1]
-  (n - 1).times do
-    fib << (fib[-1] + fib[-2])
+#Goal is to create methods that return an array of the Fibonacci sequence.
+#The length of the array is determined by argument 'n'
+
+#Iterative solution to Fibonacci sequencing
+def fibs(n)
+  array = []
+  n.times do |i|
+    array << i if i < 2
+    array << array[-2] + array[-1]
   end
-return fib[-1]
+  return array
 end
 
-def recursive_fib(n)
-  if n < 2
-    return n
-  else
-    n = recursive_fib(n - 1) + recursive_fib(n - 2)
-  end
+#Recursive solution to Fibonacci sequencing
+def fibs_rec(n)
+  return [] if n.zero?
+  return [0] if n == 1
+  return [0, 1] if n == 2
+
+  array = fibs_rec(n - 1)
+  array << (array[-1] + array[-2])
 end
 
 
 
-binding.pry
-put 'hey'
