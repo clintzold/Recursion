@@ -4,7 +4,7 @@
 def merge_sort(array)
   return array if array.length == 1   #Base case. Returns an array with a single element
   left_array = array.slice(0...array.length / 2)
-  right_array = array.slice(array.length..-1)
+  right_array = array.slice(array.length / 2..-1)
   merge(merge_sort(left_array), merge_sort(right_array))  #passes split arrays as params to be sorted
 end
 
